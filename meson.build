@@ -5,8 +5,6 @@ project('mstch',
         default_options : ['cpp_std=c++11']
 )
 
-add_global_arguments('-std=c++11', language : 'cpp')
-
 boost_dep = dependency('boost', modules : ['optional', 'variant'])
 inclocal = include_directories('include')
 incsrc   = include_directories('src')
