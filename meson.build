@@ -13,5 +13,10 @@ incsrcvisitor  = include_directories('src/visitor')
 
 subdir('src')
 
-mstch_lib = library('mstch', include_directories : [inclocal, incsrc, incsrcstate, incsrcvisitor], sources: mstch_src, dependencies: [boost_dep])
+mstch_lib = library('mstch', 
+  include_directories : [inclocal, incsrc, incsrcstate, incsrcvisitor], 
+  sources: mstch_src, 
+  dependencies: [boost_dep],
+  cpp_args: ['-Wno-unused-command-line-argument']
+)
 mstch_dep = declare_dependency(include_directories: [inclocal, incsrc, incsrcstate, incsrcvisitor], link_with: mstch_lib)
